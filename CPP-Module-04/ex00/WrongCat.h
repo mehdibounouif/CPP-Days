@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 16:42:51 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/26 08:39:38 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/11/26 09:24:28 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/11/26 09:40:53 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CAT_
-#define _CAT_
-#include "Animal.h"
+#ifndef	_WRONGCAT_
+#define _WRONGCAT_
 
-class	Cat : public Animal
+#include "WrongAnimal.h"
+
+class	WrongCat : public WrongAnimal
 {
 	public:
-		Cat();
-		~Cat();
-		Cat(const Cat &obj);
-		Cat &operator=(const Cat &obj);
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &obj);
+		WrongCat &operator=(const WrongCat &obj);
 		void	makeSound() const;
 		std::string getType() const;
 };
 
-#endif // !
+
+#endif // 

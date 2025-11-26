@@ -6,7 +6,7 @@
 #    By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/24 16:36:28 by mbounoui          #+#    #+#              #
-#    Updated: 2025/11/24 16:37:35 by mbounoui         ###   ########.fr        #
+#    Updated: 2025/11/26 09:19:46 by mbounoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = Polymorphism
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC_FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
