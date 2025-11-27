@@ -6,17 +6,22 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:36:23 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/27 08:25:47 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/27 08:52:03 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.h"
 #include "Dog.h"
 #include "Cat.h"
-#include "WrongAnimal.h"
-#include "WrongCat.h"
-
-
+int main()
+{
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
+	return 0;
+}
+/*
 int main()
 {
 	const Animal* meta = new Animal();
@@ -50,3 +55,4 @@ int main()
 
 	return 0;
 }
+*/
