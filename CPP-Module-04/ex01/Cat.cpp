@@ -6,12 +6,13 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 08:19:47 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/27 09:05:00 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:46:55 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.h"
 #include "Animal.h"
+#include "Brain.h"
 
 Cat::Cat() : Animal()
 {
@@ -22,6 +23,7 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
+	brain = new Brain(*obj.brain);
 	type = obj.type;
 }
 
@@ -29,8 +31,14 @@ Cat &Cat::operator=(const Cat &obj)
 {
 	if (this == &obj)
 		return (*this);
-	this->type = obj.type;
+	brain = new Brain(*obj.brain);
+	type = obj.type;
 	return (*this);
+}
+
+Brain	&Cat::getBrain()
+{
+	return (*brain);
 }
 
 std::string	Cat::getType() const
@@ -48,4 +56,3 @@ Cat::~Cat()
 	delete brain;
 	std::cout << "Cat is Destructed!" << std::endl;
 }
-

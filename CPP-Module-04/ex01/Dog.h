@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:44:48 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/27 09:02:23 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:34:00 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class	Dog : public Animal
 		Dog &operator=(const Dog &obj);
 		void	makeSound() const;
 		std::string	getType() const;
+		Brain &getBrain();
 };
 
 #endif // !
