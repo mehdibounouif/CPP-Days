@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 02:41:19 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 03:01:22 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:36:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 
 #include "ICharacter.h"
 #include "AMateria.h"
+#include <list>
 
 class	Character: public ICharacter
 {
+  std::string name;
+  AMateria *inventory[4];
+  std::list<AMateria* > unequipped; 
 	public:
 		Character();
+		Character(std::string const &name);
 		~Character();
 		Character(const Character &obj);
 		Character &operator=(const Character &obj);
@@ -30,4 +35,3 @@ class	Character: public ICharacter
 };
 
 #endif // !_CHARACTER_
-
