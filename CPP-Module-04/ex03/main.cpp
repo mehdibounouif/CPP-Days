@@ -6,9 +6,15 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:58:15 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/28 09:58:36 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/29 03:09:18 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/IMateriaSource.h"
+#include "includes/ICharacter.h"
+#include "includes/AMateria.h"
+#include "includes/Ice.h"
+#include "includes/Cure.h"
 
 int main()
 {
