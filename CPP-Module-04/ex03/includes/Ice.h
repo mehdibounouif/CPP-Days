@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 02:59:18 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 03:00:18 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/29 04:24:48 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "AMateria.h"
 #include "ICharacter.h"
 
-class	Ice
+class	Ice : public AMateria
 {
 	public:
 		Ice();

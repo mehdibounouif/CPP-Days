@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 02:56:59 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 02:58:58 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/29 04:19:31 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AMateria.h"
 #include "ICharacter.h"
 
-class	Cure
+class	Cure : AMateria
 {
 	public:
 		Cure();

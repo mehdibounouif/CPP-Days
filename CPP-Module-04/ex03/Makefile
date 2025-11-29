@@ -6,7 +6,7 @@
 #    By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/28 09:58:45 by mbounoui          #+#    #+#              #
-#    Updated: 2025/11/28 09:59:34 by mbounoui         ###   ########.fr        #
+#    Updated: 2025/11/29 03:11:29 by mbounoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp
+SRC_FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
