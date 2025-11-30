@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 03:47:04 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 04:59:29 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:19:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ Character &Character::operator=(const Character &obj)
 			inventory[i] = NULL;
 		}
 	}
-	while (!this->unequipped.empty())
+	while (!this->trash.empty())
 	{
-		delete this->unequipped.front();
-		this->unequipped.pop_front();
+		delete this->trash.front();
+		this->trash.pop_front();
 	}
 	for (int i = 0; i <= 3; i++)
 	{
@@ -62,10 +62,10 @@ Character &Character::operator=(const Character &obj)
 		else
 			inventory[i] = NULL;
 	}
-	for (std::list<AMateria*>::const_iterator it = obj.unequipped.begin(); 
-	     it != obj.unequipped.end(); ++it)
+	for (std::list<AMateria*>::const_iterator it = obj.trash.begin();
+	     it != obj.trash.end(); ++it)
 	{
-	    this->unequipped.push_back((*it)->clone());
+	    this->trash.push_back((*it)->clone());
 	}
 	return (*this);
 }
@@ -79,10 +79,10 @@ Character::~Character()
 		if (inventory[i])
 			delete inventory[i];
 	}
-	while (!unequipped.empty())
+	while (!trash.empty())
 	{
-		delete unequipped.front();
-		unequipped.pop_front();
+		delete trash.front();
+		trash.pop_front();
 	}
 }
 
@@ -117,7 +117,7 @@ void Character::unequip(int idx)
 		std::cout << "Unexisting slot!\n";
 	else
 	{
-		unequipped.push_front(inventory[idx]);
+		trash.push_front(inventory[idx]);
 		inventory[idx] = NULL;
 	}
 }

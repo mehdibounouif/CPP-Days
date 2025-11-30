@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 03:50:59 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 04:00:36 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 18:48:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/Cure.h"
+
 #include "../includes/ICharacter.h"  // Include here
+#include "../includes/Cure.h"  // Include here
 
 Cure::Cure() : AMateria("cure")
 {

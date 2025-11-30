@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 08:19:47 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/26 11:27:43 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 18:17:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 #include "Animal.h"
 
 Cat::Cat() : Animal()
-
 {
 	type = "Cat";
 	std::cout << "Cat is Constructed!" << std::endl;
 }
 
 Cat::Cat(const Cat &obj) : Animal(obj)
-
 {
 	type = obj.type;
 }
@@ -49,4 +47,3 @@ Cat::~Cat()
 {
 	std::cout << "Cat is Destructed!" << std::endl;
 }
-
