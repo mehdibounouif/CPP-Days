@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 09:58:15 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 03:58:25 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 05:32:19 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/IMateriaSource.h"
@@ -35,6 +35,7 @@ int main()
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(2, *bob);
 	
 	delete bob;
 	delete me;
@@ -42,4 +43,3 @@ int main()
 	
 	return (0);
 }
-
