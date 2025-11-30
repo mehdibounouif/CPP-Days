@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 02:41:19 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 19:36:57 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/30 03:44:34 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 #include "AMateria.h"
 #include <list>
 
-class	Character: public ICharacter
+class Character: public ICharacter
 {
-  std::string name;
-  AMateria *inventory[4];
-  std::list<AMateria* > unequipped; 
+	private:
+		std::string name;
+		AMateria *inventory[4];
+		std::list<AMateria*> unequipped;
 	public:
 		Character();
 		Character(std::string const &name);

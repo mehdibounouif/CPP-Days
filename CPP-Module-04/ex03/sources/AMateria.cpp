@@ -6,36 +6,41 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 03:36:21 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 03:46:42 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 05:00:48 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../includes/AMateria.h"
-#include "../includes/ICharacter.h.h"
+#include "../includes/ICharacter.h"  // Now include it here in the .cpp
 
-AMateria::AMateria()
+AMateria::AMateria() : type("")
 {
 	std::cout << "AMateria is Constructed!\n";
 }
 
-AMateria::AMateria(const AMateria &obj)
+AMateria::AMateria(std::string const & type) : type(type)
 {
-	(void)obj;
+	std::cout << "AMateria is Constructed!\n";
+}
+
+AMateria::AMateria(const AMateria &obj) : type(obj.type)
+{
 	std::cout << "AMateria Copy constructor\n";
 }
 
 AMateria &AMateria::operator=(const AMateria &obj)
 {
-	std::cout << "AMateria Copy assingment operator\n";
+	if (this != &obj)
+		type = obj.type;
+	std::cout << "AMateria Copy assignment operator\n";
 	return (*this);
 }
 
-AMateria::use(ICharacter &target)
+void AMateria::use(ICharacter &target)
 {
-	std::cout << "I should't be able to use thes on " << target.getName() << std::endl;
+	std::cout << "I shouldn't be able to use this on " << target.getName() << std::endl;
 }
 
-std::string AMateria::getType()
+std::string const & AMateria::getType() const
 {
 	return (type);
 }

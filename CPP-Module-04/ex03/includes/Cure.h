@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 02:56:59 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 04:19:31 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 03:43:51 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #define _CURE_
 
 #include "AMateria.h"
-#include "ICharacter.h"
 
-class	Cure : AMateria
+// Forward declaration
+class ICharacter;
+
+class Cure : public AMateria
 {
 	public:
 		Cure();
@@ -26,4 +28,5 @@ class	Cure : AMateria
 		AMateria* clone() const;
 		void use(ICharacter& target);
 };
+
 #endif // !_CURE_

@@ -6,38 +6,38 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 04:23:18 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/29 04:33:01 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/11/30 03:50:39 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../includes/AMateria.h"
 #include "../includes/Ice.h"
+#include "../includes/ICharacter.h"  // Include here
 
-Ice::Ice() : AMateria()
+Ice::Ice() : AMateria("ice")
 {
 	std::cout << "Ice is Constructed!\n";
 }
 
-Ice::Ice(const Ice &obj)
+Ice::Ice(const Ice &obj) : AMateria(obj)
 {
-	(void)obj;
 	std::cout << "Ice Copy Constructor!\n";
 }
 
-Ice &Ice::operator=(const Ice &obj) {
-	std::cout << "Ice Copy assingment operator!\n";
-	return (*this);
-}	
-
-void	Ice::use(ICharacter &target)
+Ice &Ice::operator=(const Ice &obj)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
+	if (this != &obj)
+		AMateria::operator=(obj);
+	std::cout << "Ice Copy assignment operator!\n";
+	return (*this);
 }
 
-AMateria *Ice::clone()
+void Ice::use(ICharacter &target)
 {
-	AMateria *obj = new Ice();
-	return (obj);
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+AMateria *Ice::clone() const
+{
+	return new Ice(*this);
 }
 
 Ice::~Ice()
