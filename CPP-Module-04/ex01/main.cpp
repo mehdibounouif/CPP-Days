@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:36:23 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 18:37:14 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/01 02:08:46 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main()
 	const Animal* i = new Cat();
 	delete j;//should not create a leak
 	delete i;
-  const Animal c;
 
 	std::cout << "\n======================\n";
 	/*=======================*/
@@ -48,7 +47,7 @@ int main()
 
 	std::cout << a.getBrain().geter(0) << std::endl;
 	
-	a.getBrain().seter(0, "bounouif");
+	a.getBrain().seter(0, "taha");
 	std::cout << b.getBrain().geter(0) << std::endl;
 	std::cout << a.getBrain().geter(0) << std::endl;
 

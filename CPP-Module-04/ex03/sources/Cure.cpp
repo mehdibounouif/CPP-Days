@@ -6,28 +6,28 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 03:50:59 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 18:48:06 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/01 03:10:05 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ICharacter.h"  // Include here
-#include "../includes/Cure.h"  // Include here
+#include "../includes/ICharacter.h"
+#include "../includes/Cure.h"
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure is Constructed!\n";
+//	std::cout << "Cure is Constructed!\n";
 }
 
 Cure::Cure(const Cure &obj) : AMateria(obj)
 {
-	std::cout << "Cure Copy Constructor!\n";
+//	std::cout << "Cure Copy Constructor!\n";
 }
 
 Cure &Cure::operator=(const Cure &obj)
 {
 	if (this != &obj)
 		AMateria::operator=(obj);
-	std::cout << "Cure Copy assignment operator!\n";
+//	std::cout << "Cure Copy assignment operator!\n";
 	return (*this);
 }
 
@@ -43,5 +43,5 @@ AMateria *Cure::clone() const
 
 Cure::~Cure()
 {
-	std::cout << "Cure is Destructed!\n";
+//	std::cout << "Cure is Destructed!\n";
 }

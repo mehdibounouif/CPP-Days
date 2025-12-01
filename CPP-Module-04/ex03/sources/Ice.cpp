@@ -6,27 +6,28 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 04:23:18 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 03:50:39 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/01 03:10:24 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/Ice.h"
-#include "../includes/ICharacter.h"  // Include here
+#include "../includes/ICharacter.h"
 
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice is Constructed!\n";
+//	std::cout << "Ice is Constructed!\n";
 }
 
 Ice::Ice(const Ice &obj) : AMateria(obj)
 {
-	std::cout << "Ice Copy Constructor!\n";
+//	std::cout << "Ice Copy Constructor!\n";
 }
 
 Ice &Ice::operator=(const Ice &obj)
 {
 	if (this != &obj)
 		AMateria::operator=(obj);
-	std::cout << "Ice Copy assignment operator!\n";
+//	std::cout << "Ice Copy assignment operator!\n";
 	return (*this);
 }
 
@@ -42,5 +43,5 @@ AMateria *Ice::clone() const
 
 Ice::~Ice()
 {
-	std::cout << "Ice is Destructed!\n";
+//	std::cout << "Ice is Destructed!\n";
 }

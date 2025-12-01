@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 03:47:04 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/11/30 19:19:22 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/01 03:11:13 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Character::Character(){}
 
 Character::Character(std::string const &name)
 {
-	std::cout << "Character is Constructed!\n";
+//	std::cout << "Character is Constructed!\n";
 	this->name = name;
 	for (int i = 0; i <= 3; i++)
 		inventory[i] = NULL;
@@ -24,7 +24,7 @@ Character::Character(std::string const &name)
 
 Character::Character(const Character &obj)
 {
-	std::cout << "Character Copy Constructor!\n";
+//	std::cout << "Character Copy Constructor!\n";
 	name = obj.name;
 	for (int i = 0; i <= 3; i++)
 	{
@@ -37,7 +37,7 @@ Character::Character(const Character &obj)
 
 Character &Character::operator=(const Character &obj)
 {
-	std::cout << "Character Copy Assignement operator!\n";
+//	std::cout << "Character Copy Assignement operator!\n";
 	if (this == &obj)
 		return (*this);
 	name = obj.name;
@@ -63,9 +63,9 @@ Character &Character::operator=(const Character &obj)
 			inventory[i] = NULL;
 	}
 	for (std::list<AMateria*>::const_iterator it = obj.trash.begin();
-	     it != obj.trash.end(); ++it)
+			it != obj.trash.end(); ++it)
 	{
-	    this->trash.push_back((*it)->clone());
+		this->trash.push_back((*it)->clone());
 	}
 	return (*this);
 }
@@ -73,7 +73,7 @@ Character &Character::operator=(const Character &obj)
 
 Character::~Character()
 {
-	std::cout << "Character is Destructed!\n";
+//	std::cout << "Character is Destructed!\n";
 	for (int i = 0; i <= 3; i++)
 	{
 		if (inventory[i])
