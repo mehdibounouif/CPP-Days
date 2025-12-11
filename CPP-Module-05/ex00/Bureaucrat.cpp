@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 09:32:22 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/10 08:55:09 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:21:43 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Bureaucrat default constructor\n";
+	std::cout  << name  << "Bureaucrat default constructor\n";
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj)
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name)
 {
 	std::cout << "Bureaucrat copy constructor\n";
 	*this = obj;
@@ -34,7 +34,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
-	std::cout << "Bureaucrat is Constructed!\n";
+	std::cout  << name  << " Bureaucrat is Constructed!\n";
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -46,7 +46,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 void	Bureaucrat::decrement()
 {
 	if (grade + 1 > 150)
-		throw	Bureaucrat::GradeTooHighException();
+		throw	Bureaucrat::GradeTooLowException();
 	else
 		grade++;
 }
@@ -54,7 +54,7 @@ void	Bureaucrat::decrement()
 void	Bureaucrat::increment()
 {
 	if (grade - 1 < 1)
-		throw	Bureaucrat::GradeTooLowException();
+		throw	Bureaucrat::GradeTooHighException();
 	else
 		grade--;
 }
@@ -81,7 +81,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat is Destructed!\n";
+	std::cout  << name  << " Bureaucrat is Destructed!\n";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)

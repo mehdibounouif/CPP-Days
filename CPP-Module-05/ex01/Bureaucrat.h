@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 09:15:53 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/11 09:21:49 by mbounoui         ###   ########.fr       */
+/*   Created: 2025/12/11 09:25:43 by mbounoui          #+#    #+#             */
+/*   Updated: 2025/12/11 09:32:12 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@
 
 class	Bureaucrat
 {
-	const std::string	name;
-	int	grade;
+	const	std::string name;
+	int		grade;
+
 	public:
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &obj);
-		Bureaucrat &operator=(const Bureaucrat &obj);
-		std::string getName() const;
-		int	getGrade() const;
+		Bureaucrat & operator=(const Bureaucrat &obj);
+		const std::string getName() const;
+		int getGrade() const;
 		void	increment();
 		void	decrement();
-		class	GradeTooHighException : public std::exception
+		class	GradeTooHighException
 		{
-			const char	*what() const throw();
+			const char *what() const throw();
 		};
-		class	GradeTooLowException : public std::exception
+		class	GradeTooLowException
 		{
-			const char	*what() const throw();
+			const char *what() const throw();
 		};
-		~Bureaucrat();
 };
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
+std::ostream	&operator<<(std::ostream &os, const Bureaucrat &obj);
 
 #endif
