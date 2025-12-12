@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:25:43 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/11 09:32:12 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/12 19:04:46 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ class	Bureaucrat
 		int getGrade() const;
 		void	increment();
 		void	decrement();
-		class	GradeTooHighException
+		class	GradeTooHighException : public std::exception
 		{
 			const char *what() const throw();
 		};
-		class	GradeTooLowException
+		class	GradeTooLowException: public std::exception
 		{
 			const char *what() const throw();
 		};
+		~Bureaucrat();
 };
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &obj);
