@@ -6,7 +6,7 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:25:43 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/12 19:04:46 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/13 09:08:32 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define _BUREAUCRAT_
 
 #include <iostream>
+
+class Form;
 
 class	Bureaucrat
 {
@@ -37,6 +39,7 @@ class	Bureaucrat
 		{
 			const char *what() const throw();
 		};
+		void	signForm(Form &obj);
 		~Bureaucrat();
 };
 

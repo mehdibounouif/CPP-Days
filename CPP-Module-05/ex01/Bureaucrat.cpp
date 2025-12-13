@@ -6,11 +6,12 @@
 /*   By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:32:15 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/12 18:13:45 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/13 09:34:38 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
+#include "Form.h"
 
 Bureaucrat::Bureaucrat()
 {
@@ -35,6 +36,17 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 		return (*this);
 	this->grade = obj.grade;
 	return (*this);
+}
+
+void	Bureaucrat::signForm(Form &obj)
+{
+	try {
+		obj.beSigned(*this);
+		std::cout << this->getName() << " signed " << obj.getName() << std::endl; 
+	} catch (std::exception &e) {
+		std::cout << this->getName() << " couldn't sign " << obj.getName() <<
+			" because " << e.what() << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) :name(name)
@@ -83,7 +95,6 @@ const	char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low!");
 }
-
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &obj)
 {
