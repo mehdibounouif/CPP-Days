@@ -32,7 +32,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj) {
   return (*this);
 }
 
-void Bureaucrat::signForm(Form &obj) {
+void Bureaucrat::signForm(AForm &obj) {
   try {
     obj.beSigned(*this);
     std::cout << this->getName() << " signed " << obj.getName() << std::endl;

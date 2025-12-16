@@ -11,33 +11,39 @@
 /* ************************************************************************** */
 
 #ifndef _FORM_
-#define	_FORM_
+#define _FORM_
 
-#include <iostream>
 #include "Bureaucrat.h"
+#include <exception>
+#include <iostream>
 
-class	Form
-{
-	const		std::string name;
-	bool		isSigned;
-	const int	gradeToSign;
-	const int	gradeToExecute;
-	public:
-		Form(const std::string name, const int toSign, const int toExecute);
-		const std::string	getName() const;
-		bool				getSigned() const;
-		int			getGradeToSign() const;
-		int			getGradeToExecute() const;
-		void				beSigned(Bureaucrat &obj);
-		class	GradeTooLowException : public std::exception
-		{
-			const	char *what() const throw();
-		};
-		class	GradeTooHighException : public std::exception
-		{
-			const	char *what() const throw();
-		};
-		~Form();
+class AForm {
+  const std::string name;
+  bool isSigned;
+  const int gradeToSign;
+  const int gradeToExecute;
+
+public:
+  AForm(const std::string name, const int toSign, const int toExecute);
+  const std::string getName() const;
+  bool getSigned() const;
+  int getGradeToSign() const;
+  int getGradeToExecute() const;
+  void beSigned(Bureaucrat &obj);
+
+  void execute(Bureaucrat const &executor) const;
+  virtual void executeAction() const = 0;
+  class FormNotSignedException : public std::exception {
+    const char *what() const throw();
+  };
+
+  class GradeTooLowException : public std::exception {
+    const char *what() const throw();
+  };
+  class GradeTooHighException : public std::exception {
+    const char *what() const throw();
+  };
+  ~AForm();
 };
-std::ostream	&operator<<(std::ostream &os, const Form &obj);
+std::ostream &operator<<(std::ostream &os, const AForm &obj);
 #endif

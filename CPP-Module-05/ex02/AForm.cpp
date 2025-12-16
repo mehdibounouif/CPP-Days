@@ -12,43 +12,43 @@
 
 #include "AForm.h"
 
-void Form::beSigned(Bureaucrat &obj) {
+void AForm::beSigned(Bureaucrat &obj) {
   if (obj.getGrade() <= gradeToSign)
     isSigned = true;
   else {
     isSigned = false;
-    throw Form::GradeTooLowException();
+    throw AForm::GradeTooLowException();
   }
 }
 
-Form::Form(const std::string name, const int toSign, const int toExecute)
+AForm::AForm(const std::string name, const int toSign, const int toExecute)
     : name(name), gradeToSign(toSign), gradeToExecute(toExecute) {
   if (gradeToExecute < 1 || gradeToSign < 1)
-    throw Form::GradeTooHighException();
+    throw AForm::GradeTooHighException();
   else if (gradeToSign > 150 || gradeToExecute > 150)
-    throw Form::GradeTooLowException();
+    throw AForm::GradeTooLowException();
   std::cout << name << " is Constructed\n";
 }
 
-bool Form::getSigned() const { return (isSigned); }
+bool AForm::getSigned() const { return (isSigned); }
 
-const std::string Form::getName() const { return (name); }
+const std::string AForm::getName() const { return (name); }
 
-int Form::getGradeToExecute() const { return (gradeToExecute); }
+int AForm::getGradeToExecute() const { return (gradeToExecute); }
 
-int Form::getGradeToSign() const { return (gradeToSign); }
+int AForm::getGradeToSign() const { return (gradeToSign); }
 
-const char *Form::GradeTooHighException::what() const throw() {
+const char *AForm::GradeTooHighException::what() const throw() {
   return ("Grade is too high!");
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
+const char *AForm::GradeTooLowException::what() const throw() {
   return ("Grade is too low!");
 }
 
-Form::~Form() { std::cout << name << " Form Destructor\n"; }
+AForm::~AForm() { std::cout << name << " Form Destructor\n"; }
 
-std::ostream &operator<<(std::ostream &os, const Form &obj) {
+std::ostream &operator<<(std::ostream &os, const AForm &obj) {
   os << obj.getName() << ", form is signed: " << obj.getSigned()
      << ", grade to sign: " << obj.getGradeToSign()
      << ", grade to execute: " << obj.getGradeToExecute();
