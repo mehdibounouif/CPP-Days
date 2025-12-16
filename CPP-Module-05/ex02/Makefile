@@ -6,7 +6,7 @@
 #    By: mbounoui <mbounoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 09:34:03 by mbounoui          #+#    #+#              #
-#    Updated: 2025/12/11 09:34:17 by mbounoui         ###   ########.fr        #
+#    Updated: 2025/12/16 09:27:52 by mbounoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = c++
 
 FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp Bureaucrat.cpp Form.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp  ShrubberyCreationForm.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
