@@ -24,6 +24,7 @@ class AForm {
   const int gradeToExecute;
 
 public:
+  AForm();
   AForm(const std::string name, const int toSign, const int toExecute);
   const std::string getName() const;
   bool getSigned() const;

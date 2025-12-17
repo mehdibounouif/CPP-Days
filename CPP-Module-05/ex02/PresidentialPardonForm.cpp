@@ -2,8 +2,7 @@
 #include "AForm.h"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm()
-    : AForm("", 25, 5), target("") {
+PresidentialPardonForm::PresidentialPardonForm() : AForm() {
   std::cout << "PresidentialPardonForm default constructor!" << std::endl;
 }
 
