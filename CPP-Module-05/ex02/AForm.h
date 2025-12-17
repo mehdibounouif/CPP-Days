@@ -27,6 +27,7 @@ public:
   AForm(const std::string name, const int toSign, const int toExecute);
   const std::string getName() const;
   bool getSigned() const;
+  void setSigned(bool flag);
   int getGradeToSign() const;
   int getGradeToExecute() const;
   void beSigned(Bureaucrat &obj);

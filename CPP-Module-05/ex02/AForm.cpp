@@ -31,6 +31,7 @@ AForm::AForm(const std::string name, const int toSign, const int toExecute)
 }
 
 bool AForm::getSigned() const { return (isSigned); }
+void AForm::setSigned(bool flag) { this->isSigned = flag; }
 
 const std::string AForm::getName() const { return (name); }
 
