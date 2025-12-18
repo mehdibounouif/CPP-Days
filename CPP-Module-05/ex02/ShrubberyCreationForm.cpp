@@ -1,5 +1,6 @@
 #include "ShrubberyCreationForm.h"
 #include "AForm.h"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm() {
   std::cout << "ShrubberyCreationForm default constructor!" << std::endl;
@@ -28,4 +29,16 @@ ShrubberyCreationForm::operator=(const ShrubberyCreationForm &obj) {
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
   std::cout << "ShrubberyCreationForm destructor!" << std::endl;
+}
+
+void ShrubberyCreationForm::executeAction() {
+  std::string filename = this->target + "_shrubbery";
+
+  std::ofstream output(filename.c_str());
+  output << "      /\\\n"
+            "     /**\\\n"
+            "    /****\\\n"
+            "   /******\\\n"
+            "      ||\n";
+  output.close();
 }

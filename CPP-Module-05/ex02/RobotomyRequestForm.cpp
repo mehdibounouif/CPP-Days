@@ -28,3 +28,11 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string target)
 RobotomyRequestForm::~RobotomyRequestForm() {
   std::cout << "RobotomyRequestForm destructor!" << std::endl;
 }
+
+void RobotomyRequestForm::executeAction() {
+  std::cout << "* drilling noises *" << std::endl;
+  if (std::rand() % 2)
+    std::cout << "1 success!" << std::endl;
+  else
+    std::cout << "0 failed!" << std::endl;
+}

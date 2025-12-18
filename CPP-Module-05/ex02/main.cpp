@@ -13,4 +13,4 @@
 #include "AForm.h"
 #include "Bureaucrat.h"
 
-int main() {}
+int main() { std::srand(std::time(NULL)); }
