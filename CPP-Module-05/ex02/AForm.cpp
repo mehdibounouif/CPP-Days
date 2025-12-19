@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "AForm.h"
+#include "Bureaucrat.h"
 
 void AForm::beSigned(Bureaucrat &obj) {
   if (obj.getGrade() <= gradeToSign)
@@ -30,6 +31,8 @@ AForm::AForm(const std::string name, const int toSign, const int toExecute)
   std::cout << name << " is Constructed\n";
 }
 
+AForm::AForm(const AForm &obj) { *this = obj; }
+
 bool AForm::getSigned() const { return (isSigned); }
 void AForm::setSigned(bool flag) { this->isSigned = flag; }
 
@@ -47,6 +50,10 @@ const char *AForm::GradeTooLowException::what() const throw() {
   return ("Grade is too low!");
 }
 
+const char *AForm::FormNotSignedException::what() const throw() {
+  return ("Form is not signed!");
+}
+
 AForm::~AForm() { std::cout << name << " Form Destructor\n"; }
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj) {
@@ -54,4 +61,12 @@ std::ostream &operator<<(std::ostream &os, const AForm &obj) {
      << ", grade to sign: " << obj.getGradeToSign()
      << ", grade to execute: " << obj.getGradeToExecute();
   return (os);
+}
+
+void AForm::execute(const Bureaucrat &obj) const {
+  if (!isSigned)
+    throw FormNotSignedException();
+  else if (obj.getGrade() > getGradeToExecute())
+    throw GradeTooLowException();
+  executeAction();
 }

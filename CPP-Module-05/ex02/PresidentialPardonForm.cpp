@@ -9,8 +9,8 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm() {
 PresidentialPardonForm::PresidentialPardonForm(
     const PresidentialPardonForm &obj)
     : AForm(obj) {
+  this->target = target;
   std::cout << "PresidentialPardonForm copy constructor!" << std::endl;
-  *this = obj;
 }
 
 PresidentialPardonForm &
@@ -29,4 +29,8 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 
 PresidentialPardonForm::~PresidentialPardonForm() {
   std::cout << "PresidentialPardonForm destructor!" << std::endl;
+}
+
+void PresidentialPardonForm::executeAction() {
+  std::cout << target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

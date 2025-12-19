@@ -1,14 +1,16 @@
 #include "RobotomyRequestForm.h"
 #include "AForm.h"
 #include "Bureaucrat.h"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm() {
   std::cout << "RobotomyRequestForm default constructor!" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj)
+    : AForm(obj) {
+  this->target = obj.target;
   std::cout << "RobotomyRequestForm copy constructor!" << std::endl;
-  *this = obj;
 }
 
 RobotomyRequestForm &

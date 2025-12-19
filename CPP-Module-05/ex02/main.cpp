@@ -12,5 +12,7 @@
 
 #include "AForm.h"
 #include "Bureaucrat.h"
+#include <cstdlib>
+#include <ctime>
 
 int main() { std::srand(std::time(NULL)); }

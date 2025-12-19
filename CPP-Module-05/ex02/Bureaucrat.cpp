@@ -42,6 +42,16 @@ void Bureaucrat::signForm(AForm &obj) {
   }
 }
 
+void Bureaucrat::executeForm(const AForm &obj) const {
+  try {
+    obj.execute(*this);
+    std::cout << this->getName() << " execute " << obj.getName() << std::endl;
+  } catch (std::exception &e) {
+    std::cout << this->getName() << "couldn't execute " << obj.getName()
+              << " because " << e.what() << std::endl;
+  }
+}
+
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) {
   std::cout << name << " Bureaucrat constructor\n";
   if (grade < 1)

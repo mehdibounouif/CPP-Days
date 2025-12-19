@@ -26,6 +26,7 @@ class AForm {
 public:
   AForm();
   AForm(const std::string name, const int toSign, const int toExecute);
+  AForm(const AForm &obj);
   const std::string getName() const;
   bool getSigned() const;
   void setSigned(bool flag);
