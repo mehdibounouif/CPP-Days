@@ -11,23 +11,11 @@
 /* ************************************************************************** */
 
 #include "AForm.h"
-#include "Bureaucrat.h"
-#include "PresidentialPardonForm.h"
-#include "RobotomyRequestForm.h"
-#include "ShrubberyCreationForm.h"
-#include <cstdlib>
-#include <ctime>
+#include "Intern.h"
 
 int main() {
-  std::srand(std::time(NULL));
-  const std::string b = "mehdi";
+  Intern a;
+  AForm *b;
 
-  //  AForm *f = new RobotomyRequestForm(b);
-  AForm *a = new ShrubberyCreationForm(b);
-  //  AForm *m = new PresidentialPardonForm(b);
-
-  Bureaucrat alice("hello", 40);
-
-  alice.signForm(*a);
-  alice.executeForm(*a);
+  b = a.makeForm("robotomy request", "Bender");
 }
