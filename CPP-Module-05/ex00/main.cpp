@@ -53,23 +53,12 @@ int main() {
   try {
     Bureaucrat e("Youssef", 149);
     std::cout << e << std::endl;
-    e.decrement(); // 149 -> 150 (worse)
+    e.decrement();
     std::cout << "After decrement: " << e << std::endl;
-    e.decrement(); // 150 -> should throw exception
+    e.decrement();
     std::cout << "After second decrement: " << e << std::endl;
   } catch (std::exception &e) {
     std::cout << "Exception: " << e.what() << std::endl;
   }
-
-  std::cout << "\n===========================\n";
-  try {
-    Bureaucrat f("Ahmed", 75);
-    std::cout << f << std::endl;
-    Bureaucrat g(f);
-    std::cout << g << std::endl;
-  } catch (std::exception &e) {
-    std::cout << "Exception: " << e.what() << std::endl;
-  }
-
   return 0;
 }

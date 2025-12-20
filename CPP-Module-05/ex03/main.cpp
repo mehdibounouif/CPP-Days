@@ -11,11 +11,18 @@
 /* ************************************************************************** */
 
 #include "AForm.h"
+#include "Bureaucrat.h"
 #include "Intern.h"
 
 int main() {
   Intern a;
   AForm *b;
 
-  b = a.makeForm("robotomy request", "Bender");
+  Bureaucrat c("mehdi", 1);
+
+  b = a.makeForm("Pridential pardon", "hmida");
+  if (!b)
+    return (1);
+  c.signForm(*b);
+  c.executeForm(*b);
 }
