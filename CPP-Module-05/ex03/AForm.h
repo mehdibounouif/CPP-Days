@@ -46,7 +46,7 @@ public:
   class GradeTooHighException : public std::exception {
     const char *what() const throw();
   };
-  ~AForm();
+  virtual ~AForm();
 };
 std::ostream &operator<<(std::ostream &os, const AForm &obj);
 #endif

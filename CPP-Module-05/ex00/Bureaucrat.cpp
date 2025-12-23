@@ -64,6 +64,7 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
   return "Grade too low (must be between 1 and 150)";
 }
+
 Bureaucrat::~Bureaucrat() {
   std::cout << name << " Bureaucrat is Destructed!\n";
 }

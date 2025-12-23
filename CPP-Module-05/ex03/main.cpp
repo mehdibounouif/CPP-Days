@@ -20,9 +20,10 @@ int main() {
 
   Bureaucrat c("mehdi", 1);
 
-  b = a.makeForm("Pridential pardon", "hmida");
+  b = a.makeForm("presidential pardon", "hmida");
   if (!b)
     return (1);
   c.signForm(*b);
   c.executeForm(*b);
+  delete b;
 }

@@ -30,4 +30,5 @@ int main() {
 
   alice.signForm(*a);
   alice.executeForm(*a);
+  delete a;
 }
