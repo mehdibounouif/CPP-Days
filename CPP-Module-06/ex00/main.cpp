@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 21:47:35 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/29 13:43:23 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/29 15:54:26 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,84 +32,54 @@ bool checkDecimal(const std::string &str)
 	return (true);
 }
 
-bool checkDouble(const std::string &a)
-{
-	int sign;
-	int index;
-	int dot;
-
-	dot = a.find('.');
-	if (a.size() <= 2
-			|| dot == std::string::npos)
-		return (false);
-
-	sign = a.find('-');
-	index = 0;
-
-	if (sign != 0 && sign != std::string::npos)
-		return (false);
-	else if (sign == 0)
-		index = 1;
-	
-	if (a.substr(dot + 1).size() != 2)
-		return (false);
-
-	std::string decimal = a.substr(index, dot);
-	std::string fraction = a.substr(dot + 1, 1);
-
-	if (!onlyDigits(decimal,0) || !onlyDigits(fraction,0))
-		return (false);
-
-	std::cout << decimal << std::endl;
-	std::cout << fraction << std::endl;
-	return (true);
-}
-#include <stdio.h>
-bool checkFloat(const std::string &a, int flag)
+bool checkFloatPoint(const std::string &a, int flag)
 {
 	int sign;
 	int index;
 	int dot;
 	int min_size;
+	std::string decimal;
+	std::string fraction;
 
-	min_size = flag == 1 ? 3 : 2;
-	printf("min_size = %d\n", min_size);
-	dot = a.find('.');
-	if (a.size() <= min_size
-			|| (a[a.size() - 1] != 'f' && flag)
-			|| dot == std::string::npos)
-		return (false);
 
-	sign = a.find('-');
-	index = 0;
+	if ((dot = a.find('.')) != std::string::npos)
+	{
+		min_size = flag ? 4: 3;
 
-	if (sign != 0 && sign != std::string::npos)
-		return (false);
-	else if (sign == 0)
-		index = 1;
-		
-	std::cout << a.substr(dot + 1) << std::endl;
-	if (a.substr(dot + 1).size() != 2 && flag)
-		return (false);
+		if (a.size() < min_size)
+			return (false);
 
-	std::string decimal = a.substr(index, dot);
-	std::string fraction = a.substr(dot + 1, 1);
+		if (a.find('-') != 0 && a.find('-') != std::string::npos)
+			return (false);
+		else if (a.find('-') != std::string::npos)
+			index = 1;
+		else 
+			index = 0;
 
-	if (!onlyDigits(decimal,0) || !onlyDigits(fraction,0))
-		return (false);
+		if ((flag && a[a.size() - 1] != 'f') || (!flag && a[a.size() - 1] == 'f'))
+			return (false);
 
-	std::cout << decimal << std::endl;
-	std::cout << fraction << std::endl;
-	return (true);
+		decimal = a.substr(index, dot);
+		fraction = flag ? a.substr(dot + 1, 1) : a.substr(dot + 1, a.size() - dot);
+		if (!onlyDigits(decimal, index) || ! onlyDigits(fraction, index))
+			return (false);
+
+		std::cout << a << std::endl;
+		std::cout << decimal << std::endl;
+		std::cout << fraction << std::endl;
+		return (true);
+	}
+	return (false);
 }
 
 int	main()
 {
-	std::string a = "11.2";
-	std::string b = "39232093902";
+	std::string a = "11.2f";
+	checkFloatPoint(a, 1);
 
-	checkFloat(a, 0);
 	std::cout << "==============\n";
+
+	std::string b = "39232093902";
 	checkDecimal(b);
 //	const size_t signal = a.find('-');
 //	// found but not in the start
