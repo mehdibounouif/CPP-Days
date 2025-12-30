@@ -1,6 +1,10 @@
 #ifndef _SCALARCONVERTER_
 #define _SCALARCONVERTER_
 
+#include <limits>
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
 class ScalarConverter 
 {
 	public:
@@ -12,12 +16,12 @@ class ScalarConverter
 };
 
 // CONVERT
-void	toChar(const std::string &input, long double num);
+void	toChar(long double num);
 void	toInt(const std::string &input, long double num);
 void	toFloat(const std::string &input, long double num);
 void	toDouble(const std::string &input, long double num);
-void	convertNumbers(const std::string &input);
-void	convertChar(const std::string &input);
+void	convertNumbers(const std::string &input, long double num);
+void	convertChar(const std::string &input, long double num);
 void	convertNanInfinit(const std::string &input);
 
 // CHECK

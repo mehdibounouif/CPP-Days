@@ -1,3 +1,8 @@
+
+#include <iostream>
+#include <string.h>
+
+#include "ScalarConverter.h"
 int	onlyDigits(const std::string &a, int index)
 {
 	return (a.find_first_not_of("0123456789", index) == std::string::npos);
@@ -5,7 +10,7 @@ int	onlyDigits(const std::string &a, int index)
 
 bool	chekcChar(const std::string &str)
 {
-	return (str.size() == 1 && !std::isdijit(str[0]) && std::isprint(str[0]));
+	return (str.size() == 1 && !std::isdigit(str[0]) && std::isprint(str[0]));
 }
 
 bool checkDecimal(const std::string &str)
@@ -19,16 +24,15 @@ bool checkDecimal(const std::string &str)
 		index = 1;
 	if (!onlyDigits(str, index) || str.empty())
 		return (false);
-	std::cout << str << std::endl;
+//	std::cout << str << std::endl;
 	return (true);
 }
 
 bool checkFloatPoint(const std::string &a, int flag)
 {
-	int sign;
 	int index;
-	int dot;
-	int min_size;
+	long unsigned int dot;
+	long unsigned int min_size;
 	std::string decimal;
 	std::string fraction;
 
@@ -55,9 +59,9 @@ bool checkFloatPoint(const std::string &a, int flag)
 		if (!onlyDigits(decimal, index) || ! onlyDigits(fraction, index))
 			return (false);
 
-		std::cout << a << std::endl;
-		std::cout << decimal << std::endl;
-		std::cout << fraction << std::endl;
+//		std::cout << a << std::endl;
+//		std::cout << decimal << std::endl;
+//		std::cout << fraction << std::endl;
 		return (true);
 	}
 	return (false);
@@ -68,5 +72,3 @@ bool	checkNanInfinit(const std::string &input)
 	return (input == "nan" || input == "-inf" || input == "+inf"
 			|| input == "nanf" || input == "-inff" || input == "+inff");
 }
-
-

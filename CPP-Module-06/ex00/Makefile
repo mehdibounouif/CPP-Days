@@ -4,7 +4,7 @@ CC = c++
 
 FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp ScalarConverter.cpp main.cpp
+SRC_FILES = ScalarConverter.cpp main.cpp convert.cpp checkType.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
