@@ -1,6 +1,29 @@
 #ifndef _SCALARCONVERTER_
 #define _SCALARCONVERTER_
 
-class ScalarConverter {};
+class ScalarConverter 
+{
+	public:
+	ScalarConverter();
+	ScalarConverter(const ScalarConverter &obj);
+	ScalarConverter &operator=(const ScalarConverter &obj);
+	~ScalarConverter();
+	static void	convert(std::string &input);
+};
 
+// CONVERT
+void	toChar(const std::string &input, long double num);
+void	toInt(const std::string &input, long double num);
+void	toFloat(const std::string &input, long double num);
+void	toDouble(const std::string &input, long double num);
+void	convertNumbers(const std::string &input);
+void	convertChar(const std::string &input);
+void	convertNanInfinit(const std::string &input);
+
+// CHECK
+int	onlyDigits(const std::string &a, int index);
+bool	chekcChar(const std::string &str);
+bool checkDecimal(const std::string &str);
+bool checkFloatPoint(const std::string &a, int flag);
+bool	checkNanInfinit(const std::string &input);
 #endif
