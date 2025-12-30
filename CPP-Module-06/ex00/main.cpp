@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 21:47:35 by mbounoui          #+#    #+#             */
-/*   Updated: 2025/12/29 15:54:26 by mbounoui         ###   ########.fr       */
+/*   Updated: 2025/12/30 14:17:31 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 int	onlyDigits(const std::string &a, int index)
 {
 	return (a.find_first_not_of("0123456789", index) == std::string::npos);
+}
+
+bool	chekcChar(const std::string &str)
+{
+	return (str.size() == 1 && str.isprint(str[0]) && !str.isdijit(str[0]));
 }
 
 bool checkDecimal(const std::string &str)
@@ -72,6 +77,14 @@ bool checkFloatPoint(const std::string &a, int flag)
 	return (false);
 }
 
+bool	checkNanInfinit(const std::string &r)
+{
+	return (r == "nan" || r == "-inf" || r == "+inf"
+			|| r == "nanf" || r == "-inff" || r == "+inff");
+}
+
+#include <cmath>
+
 int	main()
 {
 	std::string a = "11.2f";
@@ -81,6 +94,27 @@ int	main()
 
 	std::string b = "39232093902";
 	checkDecimal(b);
+
+	double c = 1.0 / 0.0;
+	std::cout << c << std::endl;
+
+	double d = -1.0 / 0.0;
+	std::cout << d << std::endl;
+
+	float e = 1.0 / 0.0;
+	std::cout << e << std::endl;
+
+	float f = -1.0 / 0.0;
+	std::cout << f << std::endl;
+
+	double j = 0.0 / 0.0;
+	std::cout << j << std::endl;
+
+	float h = 0.0 / 0.0;
+	std::cout << h << std::endl;
+
+	std::cout << sqrt(-1) << std::endl;
+
 //	const size_t signal = a.find('-');
 //	// found but not in the start
 //	if (signal != 0 && signal != std::string::npos)
