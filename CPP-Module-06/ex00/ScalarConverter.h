@@ -21,7 +21,7 @@ void	toInt(const std::string &input, long double num);
 void	toFloat(const std::string &input, long double num);
 void	toDouble(const std::string &input, long double num);
 void	convertNumbers(const std::string &input, long double num);
-void	convertChar(const std::string &input, long double num);
+void	convertChar(const std::string &input);
 void	convertNanInfinit(const std::string &input);
 
 // CHECK

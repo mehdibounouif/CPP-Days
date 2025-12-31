@@ -24,7 +24,6 @@ bool checkDecimal(const std::string &str)
 		index = 1;
 	if (!onlyDigits(str, index) || str.empty())
 		return (false);
-//	std::cout << str << std::endl;
 	return (true);
 }
 
@@ -55,17 +54,15 @@ bool checkFloatPoint(const std::string &a, int flag)
 			return (false);
 
 		decimal = a.substr(index, dot);
-		fraction = flag ? a.substr(dot + 1, 1) : a.substr(dot + 1, a.size() - dot);
+		fraction = flag ? a.substr(dot + 1, a.size() - (dot + 2)) : a.substr(dot + 1);
 		if (!onlyDigits(decimal, index) || ! onlyDigits(fraction, index))
 			return (false);
 
-//		std::cout << a << std::endl;
-//		std::cout << decimal << std::endl;
-//		std::cout << fraction << std::endl;
 		return (true);
 	}
 	return (false);
 }
+
 
 bool	checkNanInfinit(const std::string &input)
 {

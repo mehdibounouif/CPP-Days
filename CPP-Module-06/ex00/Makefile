@@ -1,4 +1,4 @@
-NAME = conveter
+NAME = convert
 
 CC = c++
 
