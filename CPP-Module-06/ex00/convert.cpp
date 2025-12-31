@@ -67,6 +67,14 @@ void	convertNanInfinit(const std::string &input)
 {
 	std::cout << "char: inpossible" << std::endl;
 	std::cout << "int: inpossible" << std::endl;
-	std::cout << "float: " << input << "f" << std::endl;
-	std::cout << "double: " << input << std::endl;
+	if (input == "nan" || input == "-inf" || input == "+inf")
+	{
+		std::cout << "float: " << input << "f" << std::endl;
+		std::cout << "double: " << input << std::endl;
+	}
+	else 
+	{
+		std::cout << "float: " << input << std::endl;
+		std::cout << "double: " << input.substr(0, input.size() - 1) << std::endl;
+	}
 }
