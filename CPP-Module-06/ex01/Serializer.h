@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 17:32:28 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/01 18:35:49 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/01 18:55:30 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class	Serializer
 {
 	public:
+		Serializer(){};
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);
 };
