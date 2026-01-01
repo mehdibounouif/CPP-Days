@@ -1,20 +1,5 @@
 #include "ScalarConverter.h"
 
-ScalarConverter::ScalarConverter(){}
-
-ScalarConverter::ScalarConverter(const ScalarConverter &obj)
-{
-	*this = obj;
-}
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
-{
-	(void)obj;
-	return (*this);
-}
-ScalarConverter::~ScalarConverter(){}
-
-
 void	ScalarConverter::convert(std::string &input)
 {
 	long double num = std::strtold(input.c_str(), NULL);
