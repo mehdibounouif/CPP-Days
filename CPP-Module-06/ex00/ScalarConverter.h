@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/02 20:41:22 by mbounoui          #+#    #+#             */
+/*   Updated: 2026/01/02 20:56:35 by mbounoui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef _SCALARCONVERTER_
 #define _SCALARCONVERTER_
 
@@ -5,6 +17,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
+
 class ScalarConverter 
 {
 	public:
@@ -17,7 +30,7 @@ void	toInt(const std::string &input, long double num);
 void	toFloat(const std::string &input, long double num);
 void	toDouble(const std::string &input, long double num);
 void	convertNumbers(const std::string &input, long double num);
-void	convertChar(const std::string &input);
+void	convertChar(char input);
 void	convertNanInfinit(const std::string &input);
 
 // CHECK

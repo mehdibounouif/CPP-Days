@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checkType.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/02 20:41:34 by mbounoui          #+#    #+#             */
+/*   Updated: 2026/01/02 20:54:19 by mbounoui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 #include <string.h>
@@ -17,13 +29,16 @@ bool checkDecimal(const std::string &str)
 {
 	int index;
 
-	index = 0;
 	if (str.find('-') != 0 && str.find('-') != std::string::npos)
 		return (false);
 	else if (str.find('-') == 0)
 		index = 1;
+	else 
+		index = 0;
+
 	if (!onlyDigits(str, index) || str.empty())
 		return (false);
+
 	return (true);
 }
 
@@ -45,7 +60,7 @@ bool checkFloatPoint(const std::string &a, int flag)
 
 		if (a.find('-') != 0 && a.find('-') != std::string::npos)
 			return (false);
-		else if (a.find('-') != std::string::npos)
+		else if (a.find('-') == 0)
 			index = 1;
 		else 
 			index = 0;
@@ -55,7 +70,7 @@ bool checkFloatPoint(const std::string &a, int flag)
 
 		decimal = a.substr(index, dot);
 		fraction = flag ? a.substr(dot + 1, a.size() - (dot + 2)) : a.substr(dot + 1);
-		if (!onlyDigits(decimal, index) || ! onlyDigits(fraction, index))
+		if (!onlyDigits(decimal, index) || !onlyDigits(fraction, index))
 			return (false);
 
 		return (true);
