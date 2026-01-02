@@ -6,7 +6,7 @@
 #    By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/02 17:27:01 by mbounoui          #+#    #+#              #
-#    Updated: 2026/01/02 17:28:43 by mbounoui         ###   ########.fr        #
+#    Updated: 2026/01/02 18:05:38 by mbounoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC_FILES = main.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
