@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 17:29:33 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/02 18:15:39 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/03 14:30:33 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,36 +45,34 @@ void	identify(Base *p)
 		std::cout << "C" << std::endl;
 }
 
-void	identify(Base &p)
+void identify(Base &p)
 {
 	try {
 		(void)dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
-	} catch(...) {
-		std::cout << "invalid cast!" << std::endl;
-	}
+		return;
+	} catch (...) {}
 
 	try {
 		(void)dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
-	} catch (...) {
-		std::cout << "invalid cast!" << std::endl;
-	}
+		return;
+	} catch (...) {}
 
 	try {
 		(void)dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
-	} catch (...) {
-		std::cout << "invalid cast!" << std::endl;
-	}
+		return;
+	} catch (...) {}
 }
+
 
 int	main()
 {
 	std::srand(std::time(NULL));
 	Base *a = generate();
 	
-	identify(a);
+	identify(*a);
 	identify(a);
 
 	delete a;
