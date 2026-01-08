@@ -2,6 +2,7 @@
 #define _ARRAY_
 
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array

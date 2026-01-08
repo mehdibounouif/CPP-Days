@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 20:41:34 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/02 20:54:19 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/05 17:21:16 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ bool checkFloatPoint(const std::string &a, int flag)
 		if ((flag && a[a.size() - 1] != 'f') || (!flag && a[a.size() - 1] == 'f'))
 			return (false);
 
-		decimal = a.substr(index, dot);
-		fraction = flag ? a.substr(dot + 1, a.size() - (dot + 2)) : a.substr(dot + 1);
+		decimal = a.substr(index, dot - index);
+		fraction = flag ? 
+				a.substr(dot + 1, a.size() - (dot + 2)) :
+				a.substr(dot + 1);
+
 		if (!onlyDigits(decimal, index) || !onlyDigits(fraction, index))
 			return (false);
 

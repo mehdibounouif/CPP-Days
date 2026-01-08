@@ -1,6 +1,4 @@
 #include "Array.h"
-#include <ctime>
-#include <cstdlib>
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -52,36 +50,44 @@ int main(int, char**)
 	delete [] mirror;//                                                                                                               
 	return 0;
 }
-/*
-int main()
-{
-  Array<int> a(3);
-  a[0] = 1;
-  a[1] = 2;
-  a[2] = 3;
 
-  std::cout << a[0] << std::endl;
-  std::cout << a[1] << std::endl;
-  std::cout << a[2] << std::endl;
-
-  Array<int> b = a;
-  b[0] = 100;
-  std::cout << "===========\n";
-  std::cout << a[0] << std::endl;
-  std::cout << b[0] << std::endl;
-
-
+//int main()
+//{
+//  Array<int> a(3);
+//  a[0] = 1;
+//  a[1] = 2;
+//  a[2] = 3;
+//
+//  std::cout << a[0] << std::endl;
+//  std::cout << a[1] << std::endl;
+//  std::cout << a[2] << std::endl;
+//
+//  Array<int> b = a;
+//  b[0] = 100;
+//  std::cout << "===========\n";
+//  std::cout << a[0] << std::endl;
+//  std::cout << b[0] << std::endl;
+//
+//
+//  std::string name = "mehdi";
+//  std::string nike = "homie";
+//  Array<std::string> c(2);
+//
+//  c[0] = name;
+//  c[1] = nike;
+//
+//  std::cout << c[0] << std::endl;
+//  std::cout << c[1] << std::endl;
+////  try {
+////    std::cout << a[4];
+////  }catch (...) {
+////    std::cout << "out of bounds!" << std::endl;
+////  }
 //  try {
-//    std::cout << a[4];
+//    std::cout << a[2] <<std::endl;
 //  }catch (...) {
 //    std::cout << "out of bounds!" << std::endl;
 //  }
-  try {
-    std::cout << a[2] <<std::endl;
-  }catch (...) {
-    std::cout << "out of bounds!" << std::endl;
-  }
+//
+//}
 
-}
-
-*/

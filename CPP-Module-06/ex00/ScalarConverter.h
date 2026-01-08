@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 20:41:22 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/02 20:56:35 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/03 13:10:26 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 class ScalarConverter 
 {
+	ScalarConverter();
+	~ScalarConverter();
+	ScalarConverter(const ScalarConverter &obj);
+	ScalarConverter &operator=(const ScalarConverter &obj);
 	public:
 	static void	convert(std::string &input);
 };
