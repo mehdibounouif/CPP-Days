@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 14:54:10 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/10 15:42:17 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/11 18:21:33 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _SPAN_
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class Span
@@ -23,48 +24,12 @@ class Span
 
 	public:
 		Span(unsigned int n);
+		Span(const Span &obj);
+		Span &operator=(const Span &obj);
+		~Span();
 		void	addNumber(int n);
 		int		shortestSpan();
 		int		longestSpan();
 };
-
-
-Span::Span(unsigned int n)
-{
-	size = n;
-	data = new int[n];
-	for (unsigned int i = 0; i < n; i++)
-		data[i] = 0;
-}
-
-void	Span::addNumber(int n)
-{
-	unsigned int i = 0;
-
-	while (data[i] != 0)
-		i++;
-	
-	if (i == size)
-		throw std::exception();
-
-	data[i] = n;
-}
-
-int Span::shortestSpan()
-{
-	std::sort(data.begin(), data.end());
-	return (data[1] - data[0]);
-
-//	for (int i = 0; i < data.size(); i++)
-//		std::cout << data[i] << std::endl;
-}
-
-int Span::longestSpan()
-{
-	std::sort(data.begin(), data.end());
-	return (data.end() - data.begin());
-//	for (int i = 0; i < data.size(); i++)
-//		std::cout << data[i] << std::endl;
-}
 
 #endif
