@@ -21,7 +21,6 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-    // Orthodox canonical form (good practice)
     MutantStack() {}
     MutantStack(const MutantStack& other) : std::stack<T>(other) {}
     MutantStack& operator=(const MutantStack& other)
@@ -31,11 +30,9 @@ public:
     }
     ~MutantStack() {}
 
-    // Iterator types
     typedef typename std::stack<T>::container_type::iterator iterator;
     typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-    // Iterator functions
     iterator begin() { return this->c.begin(); }
     iterator end()   { return this->c.end(); }
 
