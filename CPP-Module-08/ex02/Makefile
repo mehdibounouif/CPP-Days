@@ -16,7 +16,7 @@ CC = c++
 
 FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES = main.cpp Span.cpp
+SRC_FILES = main.cpp
 
 SRC_OBJS = $(SRC_FILES:.cpp=.o)
 
