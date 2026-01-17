@@ -6,7 +6,7 @@
 /*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:35:03 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/11 18:35:48 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:18:25 by mbounoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@
 template <typename T>
 class MutantStack : public std::stack<T>
 {
-public:
-    MutantStack();
-    MutantStack(const MutantStack& other);
-    MutantStack& operator=(const MutantStack& other);
-    ~MutantStack();
+	public:
+		MutantStack();
+		MutantStack(const MutantStack& other);
+		MutantStack& operator=(const MutantStack& other);
+		~MutantStack();
 
-    typedef typename std::stack<T>::container_type::iterator iterator;
-    typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-    iterator begin();
-    iterator end();
+		iterator begin();
+		iterator end();
 
-    const_iterator begin() const;
-    const_iterator end()   const;
+		const_iterator begin() const;
+		const_iterator end()   const;
 };
 
 template <typename T>
@@ -65,57 +65,6 @@ typename MutantStack<T>::const_iterator MutantStack<T>::begin() const{return (th
 template <typename T>
 typename MutantStack<T>::const_iterator MutantStack<T>::end() const{return (this->c.end());}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-template <typename T>
-class MutantStack : public std::stack<T>
-{
-	public:
-		MutantStack(){}
-		MutantStack(const MutantStack &obj): std::stack<T>(obj)
-		{}
-		MutantStack(const MutantStack &obj)
-		{
-			std::stack<T>::operator=(obj);
-			return (*this);
-		}
-		~MutantStatck(){}
-		typedef	typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-		iterator begin() const {return (this->c.begin());}
-		iterator end() const {return (this->c.end());}
-
-		const_iterator begin() const {return (this->c.begin());}
-		const_iterator end() const {return (this->c.end());}
-};
-*/
 #endif
 
 
