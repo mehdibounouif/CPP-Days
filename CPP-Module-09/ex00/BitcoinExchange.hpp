@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:57:44 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/19 22:14:41 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/20 09:24:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class BitcoinExchange {
 		bool isValidDate(const std::string &date) const;
 		bool isValidValue(double value) const;
 
-		/* Exceptions */
 		class FileError : public std::exception {
 			public:
 				const char *what() const throw();

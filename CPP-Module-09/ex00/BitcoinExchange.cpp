@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbounoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:25:07 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/19 22:15:13 by mbounoui         ###   ########.fr       */
+/*   Updated: 2026/01/20 09:25:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <iostream>
 #include <cstdlib>
 
-/* ================= Exceptions ================= */
 
 const char *BitcoinExchange::FileError::what() const throw() {
 	return "Error: could not open file.";
@@ -33,7 +32,6 @@ const char *BitcoinExchange::TooLarge::what() const throw() {
 	return "Error: too large a number.";
 }
 
-/* ================= Canonical Form ================= */
 
 BitcoinExchange::BitcoinExchange() {
 	loadDatabase();
@@ -51,7 +49,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
 
 BitcoinExchange::~BitcoinExchange() {}
 
-/* ================= Database ================= */
 
 void BitcoinExchange::loadDatabase() {
 	std::ifstream file("data.csv");
@@ -68,7 +65,6 @@ void BitcoinExchange::loadDatabase() {
 	}
 }
 
-/* ================= Exchange Rate ================= */
 
 double BitcoinExchange::getExchangeRate(const std::string &date) const {
 	std::map<std::string, double>::const_iterator it;
@@ -85,7 +81,6 @@ double BitcoinExchange::getExchangeRate(const std::string &date) const {
 	return it->second;
 }
 
-/* ================= Input Processing ================= */
 
 void BitcoinExchange::processInput(const char *file) {
 	std::ifstream input(file);
@@ -125,7 +120,6 @@ void BitcoinExchange::processInput(const char *file) {
 	}
 }
 
-/* ================= Validation ================= */
 
 bool BitcoinExchange::isValidDate(const std::string &date) const {
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
