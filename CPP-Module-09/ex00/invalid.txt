@@ -1,0 +1,10 @@
+date | value
+2011-01-03 | -3          # negative value
+2011-01-03 | 1001        # too large
+2011-13-01 | 5           # invalid month
+2011-02-30 | 1           # invalid day
+2001-42-42               # bad format
+2011-01-03 | abc         # not a number
+2011-01-03 | 1.2.3       # invalid float
+2011/01/03 | 3           # wrong date separator
+2011-01-03|3             # missing spaces
