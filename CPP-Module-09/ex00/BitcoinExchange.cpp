@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:25:07 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/20 09:25:01 by marvin           ###   ########.fr       */
+/*   Updated: 2026/01/24 15:03:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,11 @@ void BitcoinExchange::loadDatabase() {
 	std::getline(file, line); // skip header
 
 	while (std::getline(file, line)) {
-		std::string date = line.substr(0, line.find(','));
-		double price = std::atof(line.substr(line.find(',') + 1).c_str());
+    size_t coma = line.find(",");
+    if (coma == std::string::npos)
+      throw BadInput();
+		std::string date = line.substr(0, coma);
+		double price = std::atof(line.substr(coma + 1).c_str());
 		_prices[date] = price;
 	}
 }
@@ -140,6 +143,6 @@ bool BitcoinExchange::isValidDate(const std::string &date) const {
 	return d <= days[m - 1];
 }
 
-bool BitcoinExchange::isValidValue(double value) const {
-	return (value >= 0 && value <= 1000);
-}
+//bool BitcoinExchange::isValidValue(double value) const {
+//	return (value >= 0 && value <= 1000);
+//}

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:57:44 by mbounoui          #+#    #+#             */
-/*   Updated: 2026/01/20 09:24:42 by marvin           ###   ########.fr       */
+/*   Updated: 2026/01/23 09:46:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class BitcoinExchange {
 		void loadDatabase();
 		double getExchangeRate(const std::string &date) const;
 		bool isValidDate(const std::string &date) const;
-		bool isValidValue(double value) const;
+		//bool isValidValue(double value) const;
 
 		class FileError : public std::exception {
 			public:

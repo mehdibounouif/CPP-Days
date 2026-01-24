@@ -92,7 +92,6 @@ void PmergeMe::fordJohnsonDeque(std::deque<int>& d) {
     d = main;
 }
 
-
 void PmergeMe::process() {
     clock_t start, end;
 
